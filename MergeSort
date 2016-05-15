@@ -45,3 +45,4 @@
     sort(part1);
     sort(part2);
     merge(part1,part2,numbers);
+  }
