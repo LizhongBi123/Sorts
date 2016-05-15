@@ -1,0 +1,27 @@
+
+public static void quickSort(int [] numbers, int low,int high)
+{
+  int i = low;
+  int j = high;
+  int middle = low + (high-low)/2;
+  int pivot = numbers[middle];
+  while(i<=j)
+  {
+    while(numbers[i]<pivot)
+      i++;
+    while(numbers[j]>pivot)
+      j--;
+    if(i<=j)
+    {
+      int number = numbers[i];
+      numbers[i] = numbers[j];
+      numbers[j] = number;
+      i++;
+      j--;
+    }
+  }
+  if(i<high)
+    sort(numbers,i,high);
+  if(j>low)
+    sort(numbers,low,j);
+}
