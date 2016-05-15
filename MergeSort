@@ -1,0 +1,47 @@
+  
+  public static void merge(int [] part1,int [] part2, int [] combined)
+  {
+    int index1=0;
+    int index2=0;
+    for(int count = 0; count <(part1.length+part2.length);count++)
+      {
+        if(index1==part1.length)
+          {
+            combined[count] = part2[index2];
+            index2++;
+          }
+        else if(index2==part2.length)
+          {
+            combined[count] = part1[index1];
+            index1++;
+          }
+        else if(part1[index1]<part2[index2])
+          {
+            combined[count] = part1[index1];
+            index1++;
+          }
+        else
+          {
+            combined[count] = part2[index2];
+            index2++;
+          }
+      }
+  }
+  
+  public static void sort(int [] numbers)
+  {
+    if(numbers.length==0)
+      return;
+    int middle = numbers.length/2;
+    int [] part1 = new int [middle];
+    int [] part2 = new int [numbers.length-middle];
+    for(int count = 0; count <numbers.length;count++)
+      {
+        if(count<middle)
+          part1[count] = numbers[count];
+        else
+          part2[count-middle] = numbers[count];
+      }
+    sort(part1);
+    sort(part2);
+    merge(part1,part2,numbers);
