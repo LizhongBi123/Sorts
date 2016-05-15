@@ -30,7 +30,7 @@
   
   public static void sort(int [] numbers)
   {
-    if(numbers.length==0)
+    if(numbers.length==1)
       return;
     int middle = numbers.length/2;
     int [] part1 = new int [middle];
