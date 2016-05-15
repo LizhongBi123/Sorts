@@ -21,7 +21,7 @@ public static void quickSort(int [] numbers, int low,int high)
     }
   }
   if(i<high)
-    sort(numbers,i,high);
+    quickSort(numbers,i,high);
   if(j>low)
-    sort(numbers,low,j);
+    quickSort(numbers,low,j);
 }
