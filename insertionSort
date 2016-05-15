@@ -1,0 +1,18 @@
+
+public static void insertionSort(int [] numbers,int count)
+{
+  if(count == numbers.length)
+    return;
+  int number = numbers[count];
+  int placement = count;
+  for(int index = count;index>=0;index--)
+  {
+    if(numbers[index]>number)
+    {
+      numbers[index+1] = numbers[index];
+      placement = index;
+    }
+  }
+  numbers[placement] = number;
+  insertionSort(numbers,count+1);
+}
